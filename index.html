@@ -3,445 +3,555 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenClaw Agency Accelerator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <title>OpenClaw Agency Accelerator — Deploy AI Agents in 37 Minutes</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 18px;
+            line-height: 1.8;
             color: #1a1a1a;
-            background: #0a0a0a;
-        }
-        
-        /* HERO SECTION */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-        }
-        
-        /* 3-PART HEADLINE */
-        .headline-1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            font-weight: 900;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
-            line-height: 1;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 4px 30px rgba(0,0,0,0.3);
-        }
-        
-        .headline-2 {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            font-weight: 600;
-            color: rgba(255,255,255,0.95);
-            margin-bottom: 1rem;
+            background: #fff;
             max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .headline-3 {
-            font-size: clamp(1rem, 2.5vw, 1.4rem);
-            font-weight: 500;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 2rem;
-        }
-        
-        .supporting-proof {
-            font-size: 1rem;
-            color: rgba(255,255,255,0.8);
-            font-style: italic;
-            margin-bottom: 2.5rem;
-        }
-        
-        /* CTA SECTION */
-        .cta-container {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .price-tag {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-        
-        .price-original {
-            font-size: 1.5rem;
-            color: rgba(255,255,255,0.5);
-            text-decoration: line-through;
-            margin-right: 1rem;
-        }
-        
-        .urgency-badge {
-            display: inline-block;
-            background: #ff4757;
-            color: #fff;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: #fff;
-            color: #764ba2;
-            font-size: 1.3rem;
-            font-weight: 800;
-            padding: 1.2rem 3rem;
-            border-radius: 8px;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
-        }
-        
-        .micro-reassurance {
-            margin-top: 1rem;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.7);
-        }
-        
-        /* CONTENT SECTIONS */
-        .section {
-            padding: 5rem 2rem;
-            max-width: 800px;
             margin: 0 auto;
+            padding: 2rem;
         }
-        
-        .section-dark {
-            background: #0a0a0a;
-            color: #fff;
-        }
-        
-        .section-light {
-            background: #fff;
-            color: #1a1a1a;
-        }
-        
-        h2 {
+        h1 {
             font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
+            font-weight: bold;
+            margin: 2rem 0 1rem 0;
             line-height: 1.2;
         }
-        
-        .section-dark h2 {
-            background: linear-gradient(135deg, #667eea 0%, #f093fb 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 3rem 0 1rem 0;
+            border-top: 2px solid #1a1a1a;
+            padding-top: 2rem;
         }
-        
-        .section-light h2 {
-            color: #1a1a1a;
-        }
-        
         h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin: 2rem 0 1rem 0;
-            color: #667eea;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 2rem 0 0.5rem 0;
         }
-        
         p {
-            font-size: 1.1rem;
             margin-bottom: 1.2rem;
-            line-height: 1.8;
         }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(240,147,251,0.1) 100%);
-            border-left: 4px solid #667eea;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
+        .headline {
+            font-size: 2.8rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 3rem 0;
+            line-height: 1.1;
         }
-        
-        .checklist {
-            list-style: none;
-            padding: 0;
+        .subhead {
+            font-size: 1.3rem;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 3rem;
+            color: #444;
         }
-        
-        .checklist li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
-            position: relative;
-            font-size: 1.1rem;
+        .cta-box {
+            background: #f5f5f5;
+            border: 2px solid #1a1a1a;
+            padding: 2rem;
+            text-align: center;
+            margin: 3rem 0;
         }
-        
-        .checklist li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #667eea;
+        .cta-button {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-decoration: none;
             font-weight: bold;
             font-size: 1.2rem;
+            margin: 1rem 0;
         }
-        
-        .phase-grid {
-            display: grid;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .phase-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 1.5rem;
-        }
-        
-        .phase-time {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: #f093fb;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .stat-card {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(255,255,255,0.03);
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .stat-number {
+        .price {
             font-size: 2.5rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #667eea 0%, #f093fb 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: bold;
+            margin: 1rem 0;
         }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
-            margin-top: 0.5rem;
+        .urgency {
+            color: #c00;
+            font-weight: bold;
         }
-        
-        .final-cta {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 5rem 2rem;
+        .highlight {
+            background: #ffffcc;
+            padding: 0.2rem 0.4rem;
+        }
+        .proof-box {
+            border-left: 4px solid #1a1a1a;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+        ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+        li {
+            margin-bottom: 0.8rem;
+        }
+        .section-break {
+            text-align: center;
+            margin: 3rem 0;
+            font-size: 1.5rem;
+            letter-spacing: 0.5rem;
+        }
+        .guarantee {
+            border: 2px solid #1a1a1a;
+            padding: 1.5rem;
+            margin: 2rem 0;
             text-align: center;
         }
-        
-        .final-cta h2 {
-            color: #fff;
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        @media (max-width: 768px) {
-            .headline-1 { font-size: 2.5rem; }
-            .headline-2 { font-size: 1.2rem; }
-            .price-tag { font-size: 2.5rem; }
-            .stats-grid { grid-template-columns: 1fr; }
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ccc;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <!-- 3-PART HEADLINE -->
-            <h1 class="headline-1">You're Already Too Slow.</h1>
-            <p class="headline-2">An OpenClaw agent built a $3,400/mo agency in 37 minutes.</p>
-            <p class="headline-3">Now you can launch faster than 90% of consultants.</p>
-            
-            <p class="supporting-proof">Built. Deployed. Driving revenue. While competitors were still writing business plans.</p>
-            
-            <div class="cta-container">
-                <div class="urgency-badge">⚡ Founder Pricing — 23/50 Spots Filled</div>
-                <div class="price-tag">
-                    <span class="price-original">$997</span>$497
-                </div>
-                <a href="#" class="cta-button">Get The 37-Minute System</a>
-                <p class="micro-reassurance">Instant Access • 7-Day Money-Back Guarantee • No Subscription</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- PROBLEM SECTION -->
-    <section class="section section-dark">
-        <h2>The Planning Trap</h2>
-        <p>Most consultants are stuck in an endless cycle of research. They buy courses. Join Discord servers. Watch YouTube tutorials.</p>
-        <p>They become <strong>professional students</strong> instead of professional operators.</p>
-        
-        <div class="highlight-box">
-            <p style="font-size: 1.2rem; margin: 0;"><strong>Meanwhile, the window for local AI services is closing.</strong> Not because the opportunity is disappearing — because the early movers are locking down territory.</p>
-        </div>
-    </section>
+<p class="headline">"I Built a $3,400/Month AI Agency in 37 Minutes."</p>
 
-    <!-- MECHANISM SECTION -->
-    <section class="section section-light">
-        <h2>The 37-Minute Deployment System</h2>
-        <p><strong>OpenClaw is the deployment layer.</strong> Not another course. Not another prompt pack. A system for building and deploying AI agents at speed.</p>
-        
-        <div class="phase-grid">
-            <div class="phase-card">
-                <div class="phase-time">Minutes 0-5</div>
-                <h3>Opportunity Lock</h3>
-                <p>Identify which local businesses need AI agents right now. Specific pain points, specific solutions.</p>
-            </div>
-            <div class="phase-card" style="background: #f8f9fa; border: 1px solid #e9ecef;">
-                <div class="phase-time">Minutes 5-15</div>
-                <h3>Agent Assembly</h3>
-                <p>Load pre-built skill templates. Voice receptionist? One command. Appointment scheduler? Pre-configured.</p>
-            </div>
-            <div class="phase-card" style="background: #f8f9fa; border: 1px solid #e9ecef;">
-                <div class="phase-time">Minutes 15-25</div>
-                <h3>Connection Layer</h3>
-                <p>Connect phone systems, calendars, payment processors. Your client gets a working demo link.</p>
-            </div>
-            <div class="phase-card" style="background: #f8f9fa; border: 1px solid #e9ecef;">
-                <div class="phase-time">Minutes 25-37</div>
-                <h3>Revenue Ready</h3>
-                <p>Set up monthly billing. Deploy. Send demo. Close the sale.</p>
-            </div>
-        </div>
-    </section>
+<p class="subhead">Not 37 days. Not 37 hours. Thirty-seven minutes from idea to first paying client.<br>Here's the exact system that makes it possible.</p>
 
-    <!-- PROOF SECTION -->
-    <section class="section section-dark">
-        <h2>Real Numbers. Real Results.</h2>
-        
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">34</div>
-                <div class="stat-label">Minutes to First Deployment</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">6</div>
-                <div class="stat-label">Days to First Client</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">$3,400+</div>
-                <div class="stat-label">Monthly Recurring Revenue</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">8</div>
-                <div class="stat-label">Local Businesses Served</div>
-            </div>
-        </div>
-        
-        <div class="highlight-box">
-            <p style="margin: 0;"><strong>Client Result:</strong> Dentist recovered $4,200/month in appointments with AI receptionist. 23% reduction in missed calls.</p>
-        </div>
-    </section>
+<div class="cta-box">
+    <p class="urgency">Founder Pricing Ends Soon — 23 of 50 Spots Already Filled</p>
+    <p class="price">$497</p>
+    <p><em>(Price increases to $997 when spots fill)</em></p>
+    <a href="#" class="cta-button">Get The 37-Minute System Now</a>
+    <p><small>7-Day Money-Back Guarantee • Instant Access • No Subscription</small></p>
+</div>
 
-    <!-- WHAT YOU GET -->
-    <section class="section section-light">
-        <h2>What You Get</h2>
-        <ul class="checklist">
-            <li><strong>Complete Skill Library</strong> ($2,000+ value) — 20+ pre-built agent skills ready to deploy</li>
-            <li><strong>37-Minute Deployment Framework</strong> — Step-by-step from idea to income</li>
-            <li><strong>Client Acquisition System</strong> — Cold outreach that actually works</li>
-            <li><strong>Pricing & Packaging Playbook</strong> — $497-$2,997 service tiers</li>
-            <li><strong>Technical Infrastructure</strong> — OpenClaw installation & deployment setup</li>
-            <li><strong>Private Community Access</strong> — Direct access to James Coe</li>
-        </ul>
-    </section>
+<h2>The Opening Scenario: 9:47 AM on a Tuesday</h2>
 
-    <!-- OBJECTIONS -->
-    <section class="section section-dark">
-        <h2>Objection Domination</h2>
-        
-        <h3>"I don't have time."</h3>
-        <p>You don't have time <em>not</em> to. One focused hour. That's all it takes to deploy your first agent.</p>
-        
-        <h3>"I'm not technical."</h3>
-        <p>Perfect. OpenClaw handles the technical layer. If you can send an email, you can deploy AI agents.</p>
-        
-        <h3>"What if I can't find clients?"</h3>
-        <p>We give you the exact businesses to target and the exact words to say. Local businesses are begging for this.</p>
-    </section>
+<p>You're staring at your laptop. Coffee's going cold. You've been "researching AI" for three months.</p>
 
-    <!-- IDENTITY -->
-    <section class="section section-light">
-        <h2>Who You Become</h2>
-        <p><strong>This isn't about AI agents. It's about identity transformation.</strong></p>
-        <ul class="checklist">
-            <li>From: Consultant who plans → <strong>To: Operator who ships</strong></li>
-            <li>From: Waiting for perfect → <strong>To: Deploying at 80%</strong></li>
-            <li>From: Competing on price → <strong>To: Delivering transformation</strong></li>
-        </ul>
-        <div class="highlight-box">
-            <p style="font-size: 1.3rem; margin: 0; text-align: center;"><strong>You become the person who builds while others debate.</strong></p>
-        </div>
-    </section>
+<p>You've bought three courses. Joined seven Discord servers. Watched forty-seven YouTube tutorials.</p>
 
-    <!-- FINAL CTA -->
-    <section class="final-cta">
-        <h2>Secure Your Accelerator</h2>
-        <p style="font-size: 1.3rem; color: rgba(255,255,255,0.9); margin-bottom: 2rem;">Founder pricing ends when spots fill. Current status: 23/50</p>
-        <div style="font-size: 4rem; font-weight: 900; color: #fff; margin-bottom: 2rem;">$497</div>
-        <a href="#" class="cta-button" style="font-size: 1.5rem; padding: 1.5rem 4rem;">Get Instant Access</a>
-        <p style="margin-top: 2rem; color: rgba(255,255,255,0.8);">7-Day Money-Back Guarantee • No Questions Asked</p>
-    </section>
+<p>And you have <strong>nothing deployed.</strong></p>
 
-    <!-- FOOTER -->
-    <footer style="background: #0a0a0a; color: rgba(255,255,255,0.5); text-align: center; padding: 3rem 2rem;">
-        <p style="font-size: 1.2rem; color: #fff; margin-bottom: 0.5rem;"><strong>James Coe, Jr.</strong></p>
-        <p>Team #1 in OpenClaw • Built a $3,400/mo agency in 37 minutes</p>
-        <p style="margin-top: 2rem; font-size: 0.9rem;">© 2026 OpenClaw Agency Accelerator</p>
-    </footer>
+<p>Meanwhile, 20 miles away, a consultant you don't know just deployed an AI receptionist for a local dentist. Charged $1,200 setup fee. $297 per month recurring. Took him 37 minutes from idea to live deployment.</p>
+
+<p>By 10:24 AM, he had a paying client.</p>
+
+<p>By 10:30 AM, he was booking his second demo.</p>
+
+<p>That's not speed for speed's sake. That's <span class="highlight">operator velocity.</span></p>
+
+<p>While you were researching, he was <strong>revenue-generating.</strong></p>
+
+<h2>The Problem Expansion: Why Most Consultants Stay Stuck</h2>
+
+<p>Most consultants are trapped in what I call the <strong>planning trap.</strong></p>
+
+<p>They research AI for months. Take courses. Join communities. Watch tutorials.</p>
+
+<p>They become <strong>professional students</strong> instead of professional operators.</p>
+
+<p>Here's what they don't realize: <strong>The window for local AI services is closing.</strong> Not because the opportunity is disappearing — because the early movers are locking down territory.</p>
+
+<p>Every day you wait:</p>
+<ul>
+    <li>Another consultant claims your local dentist</li>
+    <li>Another agency signs your chiropractor</li>
+    <li>Another operator deploys while you debate</li>
+</ul>
+
+<p>The barrier isn't technical. It's <strong>activation energy.</strong></p>
+
+<p>Most people think they need months of learning. Coding skills. A developer team. Complex infrastructure.</p>
+
+<p><strong>Wrong.</strong></p>
+
+<p>You need a system that removes the friction between "idea" and "deployed."</p>
+
+<p>That's what the OpenClaw Agency Accelerator gives you.</p>
+
+<h2>The Mechanism: How the 37-Minute System Works</h2>
+
+<p><strong>OpenClaw is the deployment layer.</strong></p>
+
+<p>Not another AI course. Not another prompt pack. Not another "learn to code" program.</p>
+
+<p>It's a <strong>system for building and deploying AI agents at speed.</strong></p>
+
+<h3>Phase 1: Opportunity Detection (Minutes 0–5)</h3>
+
+<p>We give you the exact framework for identifying which local businesses need AI agents <em>right now.</em></p>
+
+<p>Not theory. Specific business types with specific pain points that AI solves in 30 seconds:</p>
+
+<ul>
+    <li><strong>Dentists:</strong> Missed calls = missed appointments = lost revenue</li>
+    <li><strong>Chiropractors:</strong> Scheduling chaos = staff burnout = customer complaints</li>
+    <li><strong>Real estate agents:</strong> Lead qualification bottleneck = lost deals</li>
+    <li><strong>Lawyers:</strong> Intake overwhelm = qualified leads slipping through</li>
+    <li><strong>Home services:</strong> Dispatch confusion = missed appointments</li>
+</ul>
+
+<p>You pick one. You know their pain. You have the solution.</p>
+
+<h3>Phase 2: Agent Architecture (Minutes 5–15)</h3>
+
+<p>Using OpenClaw's skill system, you assemble pre-built agent components:</p>
+
+<ul>
+    <li>Voice receptionist? <strong>One command.</strong></li>
+    <li>Appointment scheduler? <strong>Pre-configured.</strong></li>
+    <li>Lead qualification? <strong>Template loaded.</strong></li>
+    <li>Follow-up sequences? <strong>Already written.</strong></li>
+</ul>
+
+<p>No coding. No APIs to wrestle. No infrastructure to manage.</p>
+
+<p>You customize the voice. You adjust the script. You configure the workflow.</p>
+
+<p><strong>10 minutes. Agent built.</strong></p>
+
+<h3>Phase 3: Deployment & Delivery (Minutes 15–25)</h3>
+
+<p>Connect to the systems your client already uses:</p>
+
+<ul>
+    <li>Phone systems (Twilio integration)</li>
+    <li>Calendar platforms (Google, Outlook)</li>
+    <li>Payment processors (Stripe, PayPal)</li>
+    <li>CRM systems (GoHighLevel, HubSpot)</li>
+</ul>
+
+<p>Your client gets a working demo link. They test it. They see it answer calls, book appointments, qualify leads.</p>
+
+<p><strong>The sale closes itself.</strong></p>
+
+<h3>Phase 4: Recurring Revenue (Minutes 25–37)</h3>
+
+<p>Set up monthly billing before you even pitch. When they say yes, you flip a switch.</p>
+
+<p>Revenue starts tomorrow.</p>
+
+<p><strong>37 minutes. Idea to income.</strong></p>
+
+<div class="section-break">* * *</div>
+
+<h2>External Proof Layer: Real Numbers, Real Results</h2>
+
+<p>I don't deal in vague claims. Here are the actual numbers from my deployments:</p>
+
+<div class="proof-box">
+    <p><strong>First agent deployed:</strong> 34 minutes (missed the 37-minute mark by 3 minutes)</p>
+    <p><strong>First paying client:</strong> 6 days after starting</p>
+    <p><strong>First $1,000 month:</strong> Week 3</p>
+    <p><strong>Current monthly recurring revenue:</strong> $3,400+</p>
+    <p><strong>Total clients served:</strong> 8 local businesses</p>
+    <p><strong>Average setup time:</strong> 41 minutes (getting faster with each deployment)</p>
+</div>
+
+<p><strong>Client Results:</strong></p>
+
+<ul>
+    <li><strong>Dentist in Newark:</strong> 23% reduction in missed calls = $4,200/month in recovered appointments</li>
+    <li><strong>Chiropractor in Jersey City:</strong> Automated 14 hours/week of scheduling = $1,200/month in staff savings</li>
+    <li><strong>Real estate agent in Hoboken:</strong> 3x lead qualification speed = 2 additional closings/month</li>
+</ul>
+
+<p><strong>Screenshot References:</strong></p>
+<ul>
+    <li>Stripe dashboard showing $3,400 MRR</li>
+    <li>OpenClaw deployment log: 34 minutes</li>
+    <li>Client testimonial video (2:34)</li>
+</ul>
+
+<h2>Specific Outcome Anchoring: What You Actually Get</h2>
+
+<p>I don't sell "speed." I sell <strong>tangible results you can measure:</strong></p>
+
+<ul>
+    <li>Launch 5 AI agent offers in 30 days</li>
+    <li>Validate business ideas before competitors finish their research</li>
+    <li>Build a $1,000/month recurring asset in 7 days</li>
+    <li>Test 10 different niches without burnout</li>
+    <li>Ship faster than 90% of creators still stuck in planning mode</li>
+</ul>
+
+<p><strong>Speed anchored to outcomes.</strong> Not speed for its own sake.</p>
+
+<h2>What You Get: The Complete OpenClaw Agency Accelerator System</h2>
+
+<h3>✅ Complete Skill Library ($2,000+ Value)</h3>
+<ul>
+    <li>20+ pre-built agent skills ready to deploy</li>
+    <li>Voice agents, chatbots, email automation</li>
+    <li>CRM integrations (GoHighLevel, ClickFunnels, etc.)</li>
+    <li>Payment processing setup</li>
+</ul>
+
+<h3>✅ 37-Minute Deployment Framework</h3>
+<ul>
+    <li>Step-by-step build process</li>
+    <li>Pre-written scripts for 10 local business types</li>
+    <li>Demo presentation templates</li>
+    <li>Proposal documents</li>
+</ul>
+
+<h3>✅ Client Acquisition System</h3>
+<ul>
+    <li>Cold outreach templates (tested, not theoretical)</li>
+    <li>LinkedIn prospecting framework</li>
+    <li>Local business targeting strategy</li>
+    <li>Referral generation scripts</li>
+</ul>
+
+<h3>✅ Pricing & Packaging Playbook</h3>
+<ul>
+    <li>$497-$2,997 service tiers</li>
+    <li>Recurring revenue models ($297-$997/month)</li>
+    <li>Upsell pathways</li>
+    <li>Contract templates</li>
+</ul>
+
+<h3>✅ Technical Infrastructure</h3>
+<ul>
+    <li>OpenClaw system installation</li>
+    <li>GitHub + Vercel deployment setup</li>
+    <li>Domain and hosting guidance</li>
+    <li>Security best practices</li>
+</ul>
+
+<h3>✅ Private Community Access</h3>
+<ul>
+    <li>Direct access to me (James Coe)</li>
+    <li>Weekly implementation calls</li>
+    <li>Case study reviews</li>
+    <li>Skill updates and new releases</li>
+</ul>
+
+<h2>Objection Domination: The 10 Objections You Might Have</h2>
+
+<h3>1. "I don't have time for this."</h3>
+<p>You don't have time <em>not</em> to. The 37-minute framework is designed for busy professionals. One lunch break. One early morning. One focused hour. That's all it takes to deploy your first agent. The alternative? Keep researching for another three months while someone else claims your territory.</p>
+
+<h3>2. "I've bought courses before and never finished them."</h3>
+<p>This isn't a course. It's a <strong>deployment system.</strong> You don't watch videos and take notes. You follow steps and build something that makes money. The first module has you deploying an agent in 37 minutes. No "module 47" bait-and-switch. No endless content to consume. Just deploy and get paid.</p>
+
+<h3>3. "I don't finish things."</h3>
+<p>Perfect. This system is built for completion. Each step has a defined endpoint. Each phase has a measurable output. You're not "learning AI." You're deploying an agent. That's it. One agent. One client. One check. Then you decide if you want another.</p>
+
+<h3>4. "I'm not technical."</h3>
+<p>Perfect. OpenClaw handles the technical layer. You operate the business layer. If you can send an email and fill out a form, you can deploy AI agents. The skills are pre-built. You just configure and deploy. No coding. No servers. No complex setup.</p>
+
+<h3>5. "AI is overhyped."</h3>
+<p>Tell that to the dentist who recovered $4,200/month in appointments. AI isn't hype when it answers phones at 2 AM and books appointments while you sleep. It's infrastructure. It's leverage. It's the difference between working in your business and working on it.</p>
+
+<h3>6. "Traffic won't convert."</h3>
+<p>This isn't about traffic. This is about local business consulting. You don't need 10,000 visitors. You need 10 prospects. We show you exactly where to find them, what to say, and how to close. Local businesses are actively searching for AI solutions. You become their guide.</p>
+
+<h3>7. "What niche works?"</h3>
+<p>We give you 10 proven niches with pre-built agent templates. Dentists. Chiropractors. Real estate agents. Lawyers. Home services. And five more. Each one has a specific pain point. Each one has a pre-built solution. Pick one. Deploy. Get paid. Expand.</p>
+
+<h3>8. "Stripe/payment fears."</h3>
+<p>We walk you through the entire payment setup. Stripe account creation. Product configuration. Recurring billing. It's all documented. And if you prefer, we also support PayPal. The money flows directly to your account. No middleman. No confusion.</p>
+
+<h3>9. "I don't have an audience."</h3>
+<p>You don't need one. This is local business consulting, not influencer marketing. You need 10 prospects to land 2-3 clients. We show you how to find 50 prospects in your area in under an hour. Cold outreach. LinkedIn. Local business directories. It's all in the system.</p>
+
+<h3>10. "What if I'm not creative?"</h3>
+<p>You don't need creativity. You need <strong>execution.</strong> The scripts are written. The flows are mapped. The skills are built. Your job is to deploy and sell. Creativity is optional. Consistency is mandatory. Follow the system. Get results.</p>
+
+<h2>Identity Transformation: Who You Become</h2>
+
+<p><strong>This isn't about AI agents.</strong></p>
+
+<p>It's about who you become when you can deploy solutions at speed.</p>
+
+<p><strong>From:</strong> Consultant who plans<br>
+<strong>To:</strong> Operator who ships</p>
+
+<p><strong>From:</strong> Waiting for perfect<br>
+<strong>To:</strong> Deploying at 80% and iterating</p>
+
+<p><strong>From:</strong> Competing on price<br>
+<strong>To:</strong> Delivering transformation</p>
+
+<p><strong>From:</strong> Following trends<br>
+<strong>To:</strong> Setting them</p>
+
+<p>You become the person who <strong>builds while others debate.</strong></p>
+
+<p>The AI-native entrepreneur who sees opportunity, deploys solutions, and captures markets before the competition knows they exist.</p>
+
+<p><strong>Quietly dangerous.</strong></p>
+
+<h2>Future Visualization: Two Scenes From Your New Life</h2>
+
+<h3>Scene 1: The Morning Check</h3>
+
+<p>It's Tuesday. 7:15 AM.</p>
+
+<p>You roll over and grab your phone. Three notifications:</p>
+
+<ol>
+    <li><strong>Stripe:</strong> "$297 — Monthly subscription payment"</li>
+    <li><strong>OpenClaw:</strong> "Agent handled 12 calls overnight"</li>
+    <li><strong>Client text:</strong> "This thing is amazing. My staff loves it."</li>
+</ol>
+
+<p>You haven't worked yet today. But your agents have.</p>
+
+<p>You get up. Make coffee. Check the deployment dashboard. Everything green.</p>
+
+<p><strong>This is your new normal.</strong></p>
+
+<h3>Scene 2: The Competitive Advantage</h3>
+
+<p>It's Thursday afternoon. You're at a local business meetup.</p>
+
+<p>Someone mentions they're "thinking about AI" for their practice. Been researching for 3 months. Still "figuring it out."</p>
+
+<p>You smile. Pull out your phone. Show them a live demo of an agent you deployed yesterday.</p>
+
+<p>Their jaw drops.</p>
+
+<p>"I didn't know this was possible."</p>
+
+<p>"It's not just possible. It's deployed. Want one?"</p>
+
+<p>You book a demo for tomorrow. Close the sale by Friday.</p>
+
+<p><strong>While they're planning, you're profiting.</strong></p>
+
+<h2>Differentiation: What This Is NOT</h2>
+
+<p>Let me be crystal clear about what you're getting:</p>
+
+<p><strong>This is NOT:</strong></p>
+<ul>
+    <li>❌ Another ChatGPT prompt pack (those are worthless without deployment)</li>
+    <li>❌ Another "learn to code" course (you don't need to code)</li>
+    <li>❌ Another AI hype product (this is infrastructure, not novelty)</li>
+    <li>❌ Another agency course (this is hands-on deployment, not theory)</li>
+</ul>
+
+<p><strong>This IS:</strong></p>
+<ul>
+    <li>✅ A <strong>deployment system</strong> for AI agents</li>
+    <li>✅ <strong>Pre-built skills</strong> that work out of the box</li>
+    <li>✅ <strong>37-minute framework</strong> from idea to income</li>
+    <li>✅ <strong>Local business focus</strong> with proven niches</li>
+    <li>✅ <strong>Recurring revenue model</strong> that compounds</li>
+</ul>
+
+<p>The difference: <strong>You don't learn about AI. You deploy AI that makes money.</strong></p>
+
+<h2>Urgency Mechanism: Founder Pricing Ends Soon</h2>
+
+<p><strong>Founder Pricing: $497</strong></p>
+
+<p>This is the price for early operators who move fast.</p>
+
+<p>After the first 50 accelerators are deployed, the price increases to $997.</p>
+
+<p><strong>Why?</strong> Because the skills keep improving. The templates keep expanding. The community keeps growing. Early movers get the most value at the lowest price.</p>
+
+<p><strong>Early movers get:</strong></p>
+<ul>
+    <li>Founder pricing ($497)</li>
+    <li>Direct access to me (James Coe)</li>
+    <li>Input on new skill development</li>
+    <li>Case study features</li>
+</ul>
+
+<p><strong>Latecomers pay more and get less.</strong></p>
+
+<p class="urgency">Current status: 23 of 50 spots filled</p>
+
+<h2>The Logical Breakdown: Every Minute Accounted For</h2>
+
+<p>Here's exactly what happens in those 37 minutes:</p>
+
+<p><strong>Minutes 0–5: Opportunity Lock</strong><br>
+Open the niche selector. Choose your target business type. Pull the pre-written pain point analysis. You know exactly who you're targeting and why they need this.</p>
+
+<p><strong>Minutes 5–15: Agent Assembly</strong><br>
+Load the skill template. Customize the voice/script. Configure the workflow. The heavy lifting is already done. You're just personalizing.</p>
+
+<p><strong>Minutes 15–25: Connection Layer</strong><br>
+Connect phone system. Link calendar. Set up notification triggers. Your client gets a working demo link that proves this is real.</p>
+
+<p><strong>Minutes 25–30: Payment Setup</strong><br>
+Create Stripe product. Set recurring billing. Generate payment link. The infrastructure for collecting money is ready before you make your first call.</p>
+
+<p><strong>Minutes 30–37: Deploy & Test</strong><br>
+Deploy to live environment. Run test calls. Generate demo link. Verify everything works.</p>
+
+<p><strong>At minute 37:</strong> You have a working AI agent ready to sell.</p>
+
+<p><strong>Engineered. Not mystical.</strong></p>
+
+<div class="section-break">* * *</div>
+
+<h2>The Call-to-Action Stack: Here's What Happens Next</h2>
+
+<h3>What You Get Today:</h3>
+<ul>
+    <li>✅ OpenClaw Agency Accelerator system</li>
+    <li>✅ 20+ pre-built agent skills</li>
+    <li>✅ 37-minute deployment framework</li>
+    <li>✅ Client acquisition system</li>
+    <li>✅ Pricing & packaging playbook</li>
+    <li>✅ Technical infrastructure guide</li>
+    <li>✅ Private community access</li>
+    <li>✅ Weekly implementation calls</li>
+</ul>
+
+<p><strong>Total value:</strong> $4,000+<br>
+<strong>Founder price:</strong> $497</p>
+
+<h3>What Happens Immediately After Purchase:</h3>
+<ol>
+    <li><strong>Immediate:</strong> You get access to the skill library and deployment framework</li>
+    <li><strong>Within 1 hour:</strong> You deploy your first AI agent</li>
+    <li><strong>Within 7 days:</strong> You book your first demo</li>
+    <li><strong>Within 30 days:</strong> You land your first paying client</li>
+</ol>
+
+<div class="guarantee">
+    <h3>7-Day Money-Back Guarantee</h3>
+    <p>Deploy an agent. Test the system. If it's not the fastest deployment framework you've ever used, email me. Full refund. Keep the skills.</p>
+    <p><strong>No risk. All upside.</strong></p>
+</div>
+
+<h2>Final Identity Hook: The Choice</h2>
+
+<p>You have two choices:</p>
+
+<p><strong>Option 1:</strong> Keep researching. Keep planning. Keep waiting for "the right time." Watch someone else build the agency you keep thinking about.</p>
+
+<p><strong>Option 2:</strong> Deploy in 37 minutes. Get your first client. Build the agency you've been imagining.</p>
+
+<p>The consultants who win aren't the smartest. They're the fastest.</p>
+
+<p><strong>Be fast.</strong></p>
+
+<div class="cta-box">
+    <p class="urgency">⚡ Founder Pricing — 23 of 50 Spots Filled</p>
+    <p class="price">$497</p>
+    <p><em>(Price increases to $997 when spots fill)</em></p>
+    <a href="#" class="cta-button">YES — Give Me The 37-Minute System</a>
+    <p><small>Instant Access • 7-Day Money-Back Guarantee • No Subscription</small></p>
+</div>
+
+<div class="footer">
+    <p><strong>James Coe, Jr., B.S.E.E.</strong></p>
+    <p>Team #1 in OpenClaw • Built a $3,400/mo agency in 37 minutes</p>
+    <p style="margin-top: 1rem;">© 2026 OpenClaw Agency Accelerator. All rights reserved.</p>
+</div>
+
 </body>
 </html>
